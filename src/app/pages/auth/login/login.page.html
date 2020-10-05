@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button color="tertiary" (click)="dismissLogin()">Cerrar</ion-button>
+    <ion-title style="text-align: center">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="light">
+  
+  <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: auto; margin-right: auto; margin-top: 5%; display: block; padding: 5%; width: 90%; height: 700; background-color: #ffffff; border-style: solid; border-width: 0.5%; border-color: #d9d8d8; border-radius: 3%">
+      <form #form="ngForm" (ngSubmit)="login(form)" method="post">
+          <ion-item>
+            <ion-label position="floating">Email <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input ngModel type="email" name="email"></ion-input>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input ngModel type="password" name="password"></ion-input>
+          </ion-item>
+      
+          <!--<p text-right (click)="dismissLogin()" routerLink="/forgot-password">Forgot Password?</p>-->
+      
+          <ion-button type="submit" expand="full" color="primary">Login</ion-button>
+        </form>
+        <p text-center>¿No tienes cuenta aún?</p>
+        <ion-button expand="full" color="danger" (click)="registerModal()">Registro</ion-button>
+  </div>
+</ion-content>

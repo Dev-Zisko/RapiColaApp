@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons color="tertiary" slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> {{ nameSub }} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="has-header" color="light">
+    <ion-row>
+      <ion-col>
+        <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: auto; margin-right: auto; margin-top: 5%; display: block; padding: 5%; width: 90%; height: 300; background-color: #ffffff; border-style: solid; border-width: 0.5%; border-color: #d9d8d8; border-radius: 3%">
+          <ion-text>
+            <div id="page-markdown2" style="text-align:center;" class="show-list-numbers-and-dots">
+              <h1 style="color:#000000; font-size: 1.5em; font-weight: bold">{{ ident }}</h1>
+              <h1 style="color:#000000; font-size: 1.5em; font-weight: bold">{{ position }}</h1>
+            </div>
+          </ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+
+        <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: auto; margin-right: auto; margin-top: 5%; display: block; padding: 5%; width: 90%; height: 300; background-color: #ffffff; border-style: solid; border-width: 0.5%; border-color: #d9d8d8; border-radius: 3%">
+          <ion-text>
+            <div id="page-markdown2" style="text-align:center;" class="show-list-numbers-and-dots">
+              <h3 style="color:#3BACF0; font-size: 110%; font-weight: bold">Personas Disponibles: </h3>
+            </div>
+          </ion-text>
+          <ion-text>
+            <div id="page-markdown2" style="text-align:center;" class="show-list-numbers-and-dots">
+              <p style="color:#000000; font-size: 110%; font-weight: bold">{{ clientesDisp }}</p>
+            </div>
+          </ion-text>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: auto; margin-right: auto; margin-top: 5%; display: block; padding: 5%; width: 90%; height: 300; background-color: #ffffff; border-style: solid; border-width: 0.5%; border-color: #d9d8d8; border-radius: 3%">
+          <ion-text>
+            <div id="page-markdown2" style="text-align:center;" class="show-list-numbers-and-dots">
+              <h3 style="color:#3BACF0; font-size: 110%; font-weight: bold">Las Personas en caja: </h3>
+            </div>
+          </ion-text>
+          <ion-text>
+            <div id="page-markdown2" style="text-align:center;" class="show-list-numbers-and-dots">
+              <p style="color:#000000; font-size: 110%; font-weight: bold">{{ atendiendo }}</p>
+            </div>
+          </ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+  <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: auto; margin-right: auto; margin-top: 5%; display: block; padding: 5%; width: 90%; height: 700; background-color: #ffffff; border-style: solid; border-width: 0.5%; border-color: #d9d8d8; border-radius: 3%">
+    <ion-row>
+        <ion-col>
+          <div class="ion-padding">
+            <ion-button color="primary" expand="block" type="submit" [disabled]="notYet" (click)="enterQueue()" class="ion-no-margin">Ingresar a la Cola</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="ion-padding">
+            <ion-button color="primary" [disabled]="disable" expand="block"
+              style="background: -webkit-linear-gradient(to right, #333333, #dd1818);" (click)="changeStatus(0)" type="submit" class="ion-no-margin">
+              Cambiar Status</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="ion-padding">
+            <ion-button color="primary" expand="block" (click)="outQueue()" [disabled]="disable" style="background: -webkit-linear-gradient(to right, #333333, #dd1818);" type="submit" class="ion-no-margin">Salir de la Cola</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+  </div>
+    <ion-row>
+      <ion-col>
+        <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: auto; margin-right: auto; margin-top: 5%; display: block; padding: 5%; width: 90%; height: 700; background-color: #ffffff; border-style: solid; border-width: 0.5%; border-color: #d9d8d8; border-radius: 3%">
+          <ion-text>
+            <div id="page-markdown3" style="text-align:center;" class="show-list-numbers-and-dots">
+              <h1 style="color:#000000; font-size: 1.5em">{{ status }}</h1>
+            </div>
+          </ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: auto; margin-right: auto; margin-top: 5%; display: block; padding: 5%; width: 90%; height: 700; background-color: #ffffff; border-style: solid; border-width: 0.5%; border-color: #d9d8d8; border-radius: 3%">
+          <ion-text>
+            <div id="page-markdown3" style="text-align:center;" class="show-list-numbers-and-dots">
+              <h3 style="color:#000000;">Tiempo estimado en cola: </h3>
+              <p style="color:#000000; font-weight: bold">{{ time }}</p>
+            </div>
+          </ion-text>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: auto; margin-right: auto; margin-top: 5%; display: block; padding: 5%; width: 90%; height: 700; background-color: #ffffff; border-style: solid; border-width: 0.5%; border-color: #d9d8d8; border-radius: 3%">
+          <ion-text>
+            <div id="page-markdown3" style="text-align:center;" class="show-list-numbers-and-dots">
+              <h3 style="color:#000000;">Su tiempo que suele tardar: </h3>
+              <p style="color:#000000; font-weight: bold">{{ timeUser }}</p>
+            </div>
+          </ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+</ion-content>

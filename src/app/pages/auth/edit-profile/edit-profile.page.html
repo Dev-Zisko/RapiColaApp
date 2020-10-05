@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons color="tertiary" slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Editar Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+  <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: auto; margin-right: auto; margin-top: 5%; margin-bottom: 5%; display: block; padding: 5%; width: 90%; height: 700; background-color: #ffffff; border-style: solid; border-width: 0.5%; border-color: #d9d8d8; border-radius: 1.5%">
+    <form #form="ngForm" (ngSubmit)="updateInfo(form)" method="post">
+        <ion-item>
+          <ion-label position="stacked">Nombre <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required ngModel name="nombre" type="text" value="{{ nombre }}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Apellido <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required ngModel name="apellido" type="text" value="{{ apellido }}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required ngModel name="email" type="email" value="{{ email }}" disabled></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Contraseña <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required ngModel name="password" type="password" placeholder="Contraseña"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Repetir Contraseña <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required ngModel name="password2" type="password" placeholder="Repita Contraseña"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Cédula <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required ngModel name="cedula" type="number" value="{{ cedula }}" disabled></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Número Telefónico <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required type="telefono" value="{{ telefono }}" disabled></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Dirección </ion-label>
+          <ion-textarea ngModel name="direccion" value="{{ direccion }}"></ion-textarea>
+        </ion-item>
+        <div class="ion-padding">
+          <ion-button color="primary" style="display: block" expand="block" type="submit" class="ion-no-margin">Guardar Cambios</ion-button>
+        </div>
+      </form>
+  </div>
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button color="tertiary" (click)="dismissRegister()">Cerrar</ion-button>
+    <ion-title style="text-align: center">Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding color="light">
+  <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: auto; margin-right: auto; margin-top: 5%; display: block; padding: 5%; width: 90%; height: 700; background-color: #ffffff; border-style: solid; border-width: 0.5%; border-color: #d9d8d8; border-radius: 1%">
+    <form #form="ngForm" (ngSubmit)="register(form)" method="post">
+        <ion-item>
+          <ion-label position="floating">Número de Cédula <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="number" ngModel name="cedula"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="floating">Nombre <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="text" ngModel name="nombre"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label position="floating">Apellido <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="text" ngModel name="apellido"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label position="floating">Número de teléfono <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="number" ngModel name="telefono"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label position="floating">Email <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="email" type="email" ngModel name="email"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label position="floating">Contraseña <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="password" ngModel name="password"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label position="floating">Repetir Contraseña <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="password" ngModel name="password2"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label position="floating">Dirección <ion-text color="danger">*</ion-text></ion-label>
+          <ion-textarea type="text" ngModel name="direccion"></ion-textarea>
+        </ion-item>
+    
+        <ion-button type="submit" style="margin-top: 5%" expand="full" color="danger">Registrar</ion-button>
+      </form>
+      <p text-center>¿Ya posees una cuenta?</p>
+      <ion-button expand="full" color="tertiary" (click)="loginModal()">Login</ion-button>
+  </div>
+</ion-content>

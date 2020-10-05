@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons color="tertiary" slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <div *ngIf="user != undefined">
+    Bienvenido {{ user["first_name"]  }} {{ user["last_name"]  }}
+  </div>
+  <div style="box-shadow: 0 4px 8px 0 rgba(248, 234, 234, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: auto; margin-right: auto; margin-top: 5%; display: block; padding: 5%; width: 90%; height: 700; background-color: #ffffff; border-style: solid; border-width: 0.5%; border-color: #d9d8d8; border-radius: 3%">
+    <div style="display: flex; justify-content: space-between">
+      <h3 style="font-weight: bold">Datos Personales:</h3>
+      <ion-icon name="create" style="margin-top: 7%" routerLink="/edit-profile"></ion-icon>
+    </div>
+    <ion-item>
+      <ion-icon name="contact"></ion-icon>
+      <ion-text color="primary" style="margin-left: 5%">Nombre y Apellido: 
+        <ion-label >{{ nombre }} {{ apellido }}</ion-label>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="finger-print"></ion-icon>
+      <ion-text color="primary" style="margin-left: 5%">Cédula: 
+        <ion-label >{{ cedula }}</ion-label>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+        <ion-icon name="call"></ion-icon>
+        <ion-text color="primary" style="margin-left: 5%">Número de Teléfono: 
+          <ion-label >{{ telefono }}</ion-label>
+        </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="mail"></ion-icon>
+      <ion-text color="primary" style="margin-left: 5%">Email: 
+        <ion-label >{{ email }}</ion-label>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="home"></ion-icon>
+      <ion-text color="primary" style="margin-left: 5%">Dirección: 
+        <ion-label >{{ direccion }}</ion-label>
+      </ion-text>
+    </ion-item>
+
+  </div>
+</ion-content>

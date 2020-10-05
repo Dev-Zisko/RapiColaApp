@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Rapi Cola</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div color="secondary">
+    <ion-card color="light" class="welcome-card">
+      <img src="assets/logo.png">
+      <ion-card-header class="ion-text-center">
+        <ion-card-subtitle style="align-self: center">Acelera tu tiempo de espera!</ion-card-subtitle>
+        <ion-card-title>Bienvenido a RapiCola</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="ion-text-center">
+        <p>Más rapido, menos cola!</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-row>
+      <ion-col>
+        <ion-button color="tertiary" margin expand="block" color="tertiary" (click)="login()">Login</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" margin expand="block" color="danger" (click)="register()">Registro</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

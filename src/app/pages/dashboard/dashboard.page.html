@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons color="tertiary" slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding color="light">
+  <div *ngIf="user != undefined">
+    Bienvenido {{ user["first_name"]  }} {{ user["last_name"]  }}
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item color="light">
+          <ion-label style="font-weight: bold">Farmacia</ion-label>
+          <ion-select interface="popover" [(ngModel)]="selected" name="selected" (ionChange)="endStateChange(selected)">
+            <ion-select-option value="todas">Todas</ion-select-option>
+            <ion-select-option *ngFor="let pharmacy of pharmacies" value="{{ pharmacy }}">{{ pharmacy }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-item *ngFor="let item of items" (click)="infoQueue(item.id, item.nombre, item.latitud, item.longitud)" color="light">
+            <ion-avatar slot="start">
+              <img style="border-color: #989aa2; border-width: 2px" src= '{{storageUri + item.logo}}'>
+            </ion-avatar>
+            <ion-label>
+              <h3 style="font-weight: bold">
+                {{ item.nombre }}
+              </h3>
+              <p color="medium">
+                Personas en Cola: {{ item['0'] }}
+              </p>
+              <p color="medium">
+                Tiempo estimado de espera: {{ item['1'] }} minutos
+              </p>
+              <p color="medium">
+                {{ item.direccion }}
+              </p>
+            </ion-label>
+          </ion-item>
+        
+          <div *ngIf="!items.length > 0">
+            <ion-item *ngFor="let item of [1,2,3,4,5,6,7,8,9]" color="light">
+              <ion-avatar slot="start">
+                <ion-skeleton-text animated></ion-skeleton-text>
+              </ion-avatar>
+              <ion-label>
+                <h3>
+                  <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+                </h3>
+                <p>
+                  <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                </p>
+                <p>
+                  <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                </p>
+                <p>
+                  <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                </p>
+              </ion-label>
+            </ion-item>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

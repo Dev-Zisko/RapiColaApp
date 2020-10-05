@@ -1,0 +1,7 @@
+{
+  "name": "RapiCola",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
